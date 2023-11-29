@@ -71,7 +71,7 @@ class Msg(object):
 
     CMD_MSG_1 = "`{txt}`\n\n**Total Links in File are :-** {no_of_links}\n\n**Send any Index From `[ 1 - {no_of_links} ]` :-**"
     CMD_MSG_2 = "<b>Uploading :- </b> `{file_name}`"
-    RESTART_MSG = "✅ Hi Freinds Start me to download\n✅ PATH CLEARED"
+    RESTART_MSG = "✅ HI Bhai log\n✅ PATH CLEARED"
 
 # Prefixes
 prefixes = ["/", "~", "?", "!", "."]
@@ -110,7 +110,7 @@ if __name__ == "__main__":
         
         for i in chat_id:
             try:
-                await PRO.send_message(chat_id=i, text="**Bot Started! ♾ send /pro to start downloading**")
+                await PRO.send_message(chat_id=i, text="**Bot Started! ♾**")
             except Exception as d:
                 print(d)
                 continue
