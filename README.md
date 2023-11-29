@@ -9,7 +9,8 @@
 ### AVAILABLE COMMANDS 
 ```
 /start - check whether the bot is alive 
-/pro - For downloading all app videos such as Physics Wallah, Khan GS, careerwill, E1 Coaching App, Classplus app and all the other app which is available in you text Files
+/pro - For downloading all app videos such as Physics Wallah, Khan GS, careerwill, E1 Coaching App,
+Classplus app and all the other app which is available in you text Files
 ``` 
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
