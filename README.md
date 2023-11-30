@@ -39,8 +39,8 @@ The hard Way:
 ```
 sudo apt update
 sudo apt install ffmpeg git python3-pip
-git clone your_repo_link
-cd saverestrictedcontentbot 
+git clone https://gitHub.com/rishavdevkr/maal
+cd maal 
 pip3 install -r requirements.txt
 python3 -m main
 ```
