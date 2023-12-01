@@ -13,7 +13,7 @@ from handlers.tg import TgHandler
 cc = 0
 
 EXTRA_LINKS = {
-    "CP_VIMEO_TYPE": ("https://videos.classplusapp.com/", "https://api.edukemy.com/videodetails/"),
+    "CP_VIMEO_TYPE": ("https://videos.classplusapp.com/", "https://api.edukemy.com/videodetails/", "https://tencdn.classplusapp.com", "https://covod.testbook.com/"),
     "GUIDELY_LINK": ("https://guidely.prepdesk.in/api/", "https://ibpsguide.prepdesk.in/api/"),
     # "http://104.199.144.5:1935/vod/",
     "SET3": ("https://ply-404.herokuapp.com/"),
@@ -61,6 +61,13 @@ class get_link_atributes:
     @staticmethod
     def input_url(link: str, Q: str):
         if link.startswith("https://videos.classplusapp.com/"):
+            if link.split("?")[-1].startswith("auth_key="):
+                url = link
+                return url
+            else:
+                url = ParseLink.classplus_link(link=link)
+                return url
+         if link.startswith("https://tencdn.classplusapp.com"):
             if link.split("?")[-1].startswith("auth_key="):
                 url = link
                 return url
