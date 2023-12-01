@@ -286,7 +286,7 @@ class download_handler(Download_Methods):
     async def start_download(self):
         YTF = f"bv[height<=?{self.Q}]+ba/[height<=?{self.Q}]+ba/[height>=?{self.Q}]+ba/[height<=?{self.Q}]/[height>=?{self.Q}]/b"
         YTDLP = f'yt-dlp -i --no-check-certificate -f "{YTF}" --no-warning "{self.url}" --merge-output-format mp4 --remux-video mp4 -o "{self.temp_dir}.%(ext)s"'
-        CMD = f'{YTDLP} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32"'
+        CMD = f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
         # dl = subprocess.run(download_cmd, shell=True)
 
         if self.url.startswith('https://elearn.crwilladmin.com/') and self.url.endswith('.pdf'):
@@ -331,7 +331,7 @@ class download_handler(Download_Methods):
                 os.system(f'curl "{rout}" -c "cooks.txt"')
                 cook = "cooks.txt"
                 YTDLP = f'yt-dlp -i --no-check-certificate -f "{YTF}" --no-warning "{m3u8url}" --cookies "{cook}" --remux-video mp4 -o "{self.temp_dir}.%(ext)s"'
-                CMD = f'{YTDLP} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32"'
+                CMD = f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"
                 file_name = await download_handler.recursive_asyno(self, cmd=CMD)
                 os.remove(cook)
                 return file_name
