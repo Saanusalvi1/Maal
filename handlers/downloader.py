@@ -60,7 +60,7 @@ class get_link_atributes:
 
     @staticmethod
     def input_url(link: str, Q: str):
-        if link.startswith("https://videos.classplusapp.com/", "https://tencdn.classplusapp.com"):
+        if link.startswith("https://videos.classplusapp.com/"):
             if link.split("?")[-1].startswith("auth_key="):
                 url = link
                 return url
@@ -71,6 +71,9 @@ class get_link_atributes:
             url = ParseLink.vision_m3u8_link(link, Q)
             return url
         elif link.startswith(("https://covod.testbook.com/")):
+            url = ParseLink.classplus_link(link=link)
+            return url
+        elif link.startswith(("https://tencdn.classplusapp.com")):
             url = ParseLink.classplus_link(link=link)
             return url
         elif link.startswith("http://www.visionias.in/student/videoplayer_v2/?"):
