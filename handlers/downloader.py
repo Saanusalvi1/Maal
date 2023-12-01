@@ -60,14 +60,7 @@ class get_link_atributes:
 
     @staticmethod
     def input_url(link: str, Q: str):
-        if link.startswith("https://videos.classplusapp.com/"):
-            if link.split("?")[-1].startswith("auth_key="):
-                url = link
-                return url
-            else:
-                url = ParseLink.classplus_link(link=link)
-                return url
-         if link.startswith("https://tencdn.classplusapp.com"):
+        if link.startswith("https://videos.classplusapp.com/", 'https://tencdn.classplusapp.com"):
             if link.split("?")[-1].startswith("auth_key="):
                 url = link
                 return url
